@@ -26,3 +26,67 @@ For Android development, run:
 
 
 ```
+
+`src` rename `src-react`
+
+`index.html` move to `src-react/index.html`
+
+modify `vite.config.ts`
+
+```
+build.outDir '../dist'
+root         'src-react'
+publicDir    '../public'
+```
+
+modify `src-react/index.html`
+
+```
+/src/ -> /
+```
+
+modify `tsconfig.json`
+
+```
+"include": ["src"] -> "include": ["src-react"]
+```
+
+add `Cargo.toml`
+
+```
+[workspace]
+members = ["src-tauri"]
+resolver = "2"
+```
+
+将 `src-tauri/.gitignore` 内容复制到 `.gitignore` 后，删除 `src-tauri/.gitignore`
+
+run command
+
+```
+pnpm i
+pnpm dev
+pnpm tauri dev
+```
+
+调整 `src-tauri/Cargo.toml` 版本号到最新，解决下面的报错：
+
+```
+> tauri "dev"
+
+     Running BeforeDevCommand (`pnpm dev`)
+       Error Failed to parse version `2` for crate `tauri`
+       Error Failed to parse version `2` for crate `tauri-plugin-opener`
+```
+
+run command
+
+```
+pnpm tauri android init
+```
+
+modify `.gitignore`
+
+```
+/gen/schemas -> src-tauri/gen/schemas
+```

@@ -29,4 +29,9 @@ export default defineConfig(async () => ({
       ignored: ["**/src-tauri/**"],
     },
   },
+  build: {
+    outDir: "../dist"
+  },
+  root: "src-react",
+  publicDir: "../public"
 }));
