@@ -79,6 +79,30 @@ pnpm tauri dev
        Error Failed to parse version `2` for crate `tauri-plugin-opener`
 ```
 
+```
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+```
+
+changed
+
+```
+[build-dependencies]
+tauri-build = { version = "2.4.1", features = [] }
+
+[dependencies]
+tauri = { version = "2.8.5", features = [] }
+tauri-plugin-opener = "2.5.0"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.143"
+```
+
 run command
 
 ```
