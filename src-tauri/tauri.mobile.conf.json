@@ -1,0 +1,12 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "template-tauri-bun-workspace",
+  "version": "0.0.1",
+  "identifier": "com.template-tauri-bun-workspace",
+  "build": {
+    "frontendDist": "../ui-mobile/dist",
+    "devUrl": "http://localhost:26000",
+    "beforeDevCommand": "bun -F ui-mobile dev",
+    "beforeBuildCommand": "bun -F ui-mobile build"
+  }
+}
